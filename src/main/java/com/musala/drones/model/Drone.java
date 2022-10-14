@@ -131,6 +131,28 @@ public class Drone {
 
 
 
+	public static Drone setDrone(Drone drone, DroneDto droneForm, Model model, State state) {
+		if (droneForm.getSerialNumber() != null) {
+			//drone.droneId = drone.getDroneId();
+			drone.serialNumber = droneForm.getSerialNumber();
+		}
+		if (model != null) {
+			drone.model = model;
+		}
+		if (droneForm.getBatteryCapacity() != null) {
+			drone.batteryCapacity = droneForm.getBatteryCapacity();
+		}
+		if (droneForm.getWeight() != null) {
+			drone.weight = droneForm.getWeight();
+		}
+		if (state != null) {
+			drone.state = state;
+		}
+		return drone;
+	}
+
+
+
 	/**
 	 * @return the droneId
 	 */
