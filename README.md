@@ -1,5 +1,7 @@
 
 Drone app service End-points
+
+<pre>
 [
     {
         "handler": "com.musala.drones.controller.operation.DispatchController#getDroneWithLoadItems(String)",
@@ -195,3 +197,5 @@ Drone app service End-points
         }
     }
 ]
+
+</pre>
