@@ -13,6 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.support.DataAccessUtils;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -30,11 +32,14 @@ import com.musala.drones.service.UserService;
  */
  @Service
 public class UserServiceImp implements UserService{
+	 
  @PersistenceContext
 	    private EntityManager entityManager;
 	    
 	@Autowired
 	private AppUserDao userDao;
+	
+
 	private BCryptPasswordEncoder passw;
 	
 	@Override
@@ -306,6 +311,16 @@ public AppUser findSingleUserWithRolesAndOfficeByUsernameNamedQuery(String userN
 		    return (AppUser) DataAccessUtils.singleResult(query.getResultList());
 }
 
+
+@Override
+public String findLoggedInUsername() {
+    Object userDetails = SecurityContextHolder.getContext().getAuthentication().getDetails();
+    if (userDetails instanceof UserDetails) {
+        return ((UserDetails)userDetails).getUsername();
+    }
+
+    return null;
+}
 
 
 

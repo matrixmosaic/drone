@@ -8,24 +8,28 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.transaction.annotation.Transactional;
+import org.springframework.stereotype.Service;
 
 import com.musala.drones.model.AppUser;
 import com.musala.drones.repository.AppUserDao;
 
 
 
-//@Service("userDetailsServiceImpl")
+@Service("userDetailsServiceImpl")
 
 
+//@Service
 public class UserDetailsServiceImpl implements UserDetailsService{
+	
+	@Autowired
+	private AppUserDao userDao;
 
 	  private static final Logger log = LoggerFactory.getLogger(UserDetailsServiceImpl.class);
-    @Autowired
-    private AppUserDao userDao;
+	  
+
 
     @Override
-    @Transactional(readOnly = true)
+  //  @Transactional(readOnly = true)
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
     	  System.out.println("username-:"+ userName + "\n");
     	  log.info("loadUserByUsername() : {}", userName);
@@ -35,12 +39,12 @@ public class UserDetailsServiceImpl implements UserDetailsService{
 			user = userDao.findByUserName(userName);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			  System.out.println("This User is not in databade");
+			  System.out.println("User record not found");
 			e.printStackTrace();
 		}
     	
         if(user==null){
-            System.out.println("This User not found");
+            System.out.println("This User is not found");
             throw new UsernameNotFoundException("Username not found");
         }
 
@@ -51,12 +55,12 @@ public class UserDetailsServiceImpl implements UserDetailsService{
 
         System.out.println("USER AUTH"+userDetals.getAuthorities());
 
-       // System.out.println("USER PASS"+userDetals.getPassword());
 
        log.info("loadUserByUsername() : {}", userName);
         return userDetals;
         
-       //return new org.springframework.security.core.userdetails.User(user.getUserName(), user.getPassword(), grantedAuthorities);
     }
+    
+    
 	
 }

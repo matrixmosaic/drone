@@ -16,6 +16,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -293,13 +294,13 @@ public class DispatchController {
 	/* checking loaded medication items for a given drone */
 
 	@CrossOrigin
-	@RequestMapping(value = "/drone/items/get", method = RequestMethod.POST, produces = "application/json")
+	@RequestMapping(value = "/drone/items/get/{serialNumber}", method = RequestMethod.GET, produces = "application/json")
 	@ResponseBody
-	ResponseEntity<GeneralStatus<TripDto>> getDroneWithLoadItems(@RequestBody DroneDto droneForm) {
+	ResponseEntity<GeneralStatus<TripDto>> getDroneWithLoadItems(@PathVariable String serialNumber) {
 		HttpHeaders responseHeaders = new HttpHeaders();
 		responseHeaders.setContentType(MediaType.APPLICATION_JSON);
 
-		if (droneForm == null || droneForm.getSerialNumber() == null) {
+		if (serialNumber == null) {
 
 			return new ResponseEntity<>(
 					new GeneralStatus<TripDto>(null, "Data  provided is empty or drone serial number is not provided", "400"),
@@ -307,7 +308,7 @@ public class DispatchController {
 
 		}
 
-		trip = tripService.findTripWithLoadItemsBySerialNumberNamedQuery(droneForm.getSerialNumber());
+		trip = tripService.findTripWithLoadItemsBySerialNumberNamedQuery(serialNumber);
 		
 		if (trip == null) {
 			return new ResponseEntity<>(
@@ -327,7 +328,7 @@ public class DispatchController {
 	/*could checking available drones for loading; */
 
 	@CrossOrigin
-	@RequestMapping(value = "/document/state/get", method = RequestMethod.POST, produces = "application/json")
+	@RequestMapping(value = "/drone/state/get", method = RequestMethod.POST, produces = "application/json")
 	@ResponseBody
 	ResponseEntity<GeneralStatus<List<DroneDto>>> getDroneByState(@RequestBody DroneDto droneForm) {
 		HttpHeaders responseHeaders = new HttpHeaders();

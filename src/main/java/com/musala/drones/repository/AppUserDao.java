@@ -3,10 +3,11 @@ package com.musala.drones.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
 import com.musala.drones.model.AppUser;
 
-
+@Repository
 public interface AppUserDao extends JpaRepository<AppUser, Long>{
 
 	 //@Query("select u from user u where u.userName like :userName")

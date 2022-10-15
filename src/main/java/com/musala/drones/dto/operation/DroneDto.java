@@ -32,7 +32,7 @@ import com.musala.drones.model.Trip;
 public class DroneDto {
 	
 
-	private Integer droneId;
+	private Long droneId;
 
 	private String serialNumber;
 	
@@ -67,7 +67,7 @@ public class DroneDto {
 	 * @param weight
 	 * @param trips
 	 */
-	public DroneDto(Integer droneId, String serialNumber, String model, String state, BigDecimal batteryCapacity,
+	public DroneDto(Long droneId, String serialNumber, String model, String state, BigDecimal batteryCapacity,
 			BigDecimal weight, List<Trip> trips) {
 		super();
 		this.droneId = droneId;
@@ -92,14 +92,14 @@ public class DroneDto {
 	/**
 	 * @return the droneId
 	 */
-	public Integer getDroneId() {
+	public Long getDroneId() {
 		return droneId;
 	}
 
 	/**
 	 * @param droneId the droneId to set
 	 */
-	public void setDroneId(Integer droneId) {
+	public void setDroneId(Long droneId) {
 		this.droneId = droneId;
 	}
 

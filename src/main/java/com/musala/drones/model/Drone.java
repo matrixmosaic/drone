@@ -60,7 +60,7 @@ public class Drone {
 	@Id
 	@Column(name = "drone_id")
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer droneId;
+	private Long droneId;
 	
 	@Column(name = "serial_number", length = 255)
 	private String serialNumber;
@@ -156,14 +156,14 @@ public class Drone {
 	/**
 	 * @return the droneId
 	 */
-	public Integer getDroneId() {
+	public Long getDroneId() {
 		return droneId;
 	}
 
 	/**
 	 * @param droneId the droneId to set
 	 */
-	public void setDroneId(Integer droneId) {
+	public void setDroneId(Long droneId) {
 		this.droneId = droneId;
 	}
 

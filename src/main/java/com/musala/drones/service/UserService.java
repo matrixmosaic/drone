@@ -15,6 +15,7 @@ import com.musala.drones.model.Role;
  * @author George J. Budeba
  *
  */
+
 public interface UserService {
 
 	
@@ -75,5 +76,7 @@ public interface UserService {
 	List<AppUser> findUsersAndOfficeAndRolesByRolesCode(Set<Role> roles);
 
 	List<AppUser> findAllUsersAndOfficeAndRoles();
+
+	String findLoggedInUsername();
 	
 }

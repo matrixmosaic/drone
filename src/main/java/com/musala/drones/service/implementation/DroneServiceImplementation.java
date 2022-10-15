@@ -35,7 +35,7 @@ public class DroneServiceImplementation implements DroneService {
     private EntityManager entityManager;
     
 	Query query;
-	private Drone drone;
+	
 	
 	@Override
 	public Drone addAndGetInstance(Drone drone) {

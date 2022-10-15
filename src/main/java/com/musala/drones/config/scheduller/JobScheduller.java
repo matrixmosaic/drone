@@ -32,6 +32,7 @@ public class JobScheduller {
 	private static final DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
 	private static DateFormat dayFormat = new SimpleDateFormat("yyyy-MM-dd");
 	 List<Drone> drones;
+	 
 	 @Autowired
 	 DroneService  droneService;
 	
