@@ -17,6 +17,9 @@ ii.  H2 is an inmerory database in this case. The schema are auto populated in t
 ` spring.datasource.username=musala `
 ` spring.datasource.password=musala2022`
 
+- With the default configurations. Once the application is running on the local machine, the H2 In memory database could be accessed at (http://localhost:9090/drones/db)[http://localhost:9090/drones/db]
+- the default database name is dronedb, hence, in this condition, the JDBC url should be jdbc:h2:mem:dronedb
+
 - The schema definition (with all the tables) file is placed in ` scr/main/resource/db/schema.sql `. 
 - Some initial configuration data such as admin credentials and model definitions are also auto populate into the database during the initial bootup stage. The initial data file is place   in ` scr/main/resource/db/data.sql `.
 
