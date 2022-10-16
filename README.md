@@ -47,10 +47,10 @@ There are three shemas for the drone database tables.
 <h2>B. DN_AUD</h2>
 <p>- Here is where we have placed all the audit tables that corresponds to each domain models which requires audit, their names corresponds to the domain models in the DN_MAIN schema but differ only in postfix ( postfixed with aud i.e aud_{tableName} }
 -The entity relationship design for the models uder this schema is as displayed below.
-
+</p>
 ![dn_aud schema](https://musala-drones.s3.amazonaws.com/models/dn_aud_schema.png) 
 
-</p>
+
 
 
 
@@ -61,7 +61,7 @@ There are three shemas for the drone database tables.
 
 </p>
 
-
+</pre>
 Generally the entity relationship diagram below shows the design of the entire database.
 
 
@@ -70,7 +70,7 @@ Generally the entity relationship diagram below shows the design of the entire d
 
 
   
-</pre>
+
 
 
 
