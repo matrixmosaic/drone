@@ -30,13 +30,13 @@ import com.musala.drones.service.UserService;
 
 
 /**
- * @author George J. Budeba george.bugeba@lands.go.tz
+ * @author George J. Budeba 
  *
  */
 
 @RestController
 @RequestMapping("api/auth")
-public class LandsRemoteCallAuthController {
+public class DroneAppRemoteCallAuthController {
 
 	@Autowired
 	private JwtTokenUtil jwtTokenUtil;
