@@ -53,7 +53,7 @@ see the image below, a post request to get the auth token
 
 Snapshop of swagger interface(Each end point could be expanded to view both the schema and sample values for both request and response data)
 
-![swagger](https://musala-drones.s3.amazonaws.com/models/drone-app-swagger.PNG) 
+![swagger](https://musala-drones.s3.amazonaws.com/models/drone-app-api-swagger.PNG) 
 
 v. All the unit testing are also within the folder ` source/test/java`  in the base package ` com.musala.drones `
 
