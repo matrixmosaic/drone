@@ -48,7 +48,7 @@ see the image below, a post request to get the auth token
 ![general schema](https://musala-drones.s3.amazonaws.com/models/auth_header.PNG) 
 
 - To test all the implemented end point and understand their request and response structure and datatypes you could use swagger whose end points are permitted for testing purposes. Swagger will give all the registered end points and populate the fieds with dummy data for testing purposes.
--Swagger end point is configured to be at;
+-Swagger end point is configured to be at
 [http://localhost:9090/drones/docs/swagger-ui/swagger-ui/index.html](http://localhost:9090/drones/docs/swagger-ui/swagger-ui/index.html)
 
 Snapshop of swagger interface(Each end point could be expanded to view both the schema and sample values for both request and response data)
