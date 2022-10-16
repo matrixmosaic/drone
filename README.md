@@ -358,7 +358,7 @@ With default settings , the request and response schema can be viewed at
 This method takes in the principal credentials, validates them and issues timed tokens for authorized users;
 
 With default settings , the request and response schema can be viewed at 
-[http://localhost:9090/drones/docs/swagger-ui/swagger-ui/index.html#/lands-remote-call-auth-controller/authenticateRemotePrincipal]( http://localhost:9090/drones/docs/swagger-ui/swagger-ui/index.html#/lands-remote-call-auth-controller/authenticateRemotePrincipal ) 
+[http://localhost:9090/drones/docs/swagger-ui/swagger-ui/index.html#/drone-app-remote-call-auth-controller/authenticateRemotePrincipal](http://localhost:9090/drones/docs/swagger-ui/swagger-ui/index.html#/drone-app-remote-call-auth-controller/authenticateRemotePrincipal) 
 - Descriptiom
 
 ```json
