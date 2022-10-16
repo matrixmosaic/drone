@@ -54,13 +54,10 @@ public class LandsRemoteCallAuthController {
 	@Autowired
 	private AuthenticationManager authenticationManager;
 
-	@CrossOrigin
-	@GetMapping("/welcome")
-	public String welcome() {
-		return "Welcome to back end !!";
-	}
-
-	// @PostMapping("/authenticate")
+	/*
+	 * 
+	 * This method takes in the principal credentials, validates them and issues timed tokens for authorized users.
+	 */
 	@CrossOrigin
 	@RequestMapping(value = "/authenticate", method = RequestMethod.POST, produces = "application/json")
 	@ResponseBody

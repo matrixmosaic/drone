@@ -84,16 +84,14 @@ public class DispatchController {
 	private List<Drone> drones;
 
 	
-	@GetMapping("/hello")
-	String sayHello() {
-		
-		return "Hello";
-	}
-	
+
 	
 	
 
 	/*registerDrone*/
+	/*
+	 *This method exposes the service end point for registering a new drone
+	 */
 
 	@CrossOrigin
 	@RequestMapping(value = "/drone/register", method = RequestMethod.POST, produces = "application/json")
@@ -328,20 +326,20 @@ public class DispatchController {
 	/*could checking available drones for loading; */
 
 	@CrossOrigin
-	@RequestMapping(value = "/drone/state/get", method = RequestMethod.POST, produces = "application/json")
+	@RequestMapping(value = "/drone/state/get/{droneState}", method = RequestMethod.GET, produces = "application/json")
 	@ResponseBody
-	ResponseEntity<GeneralStatus<List<DroneDto>>> getDroneByState(@RequestBody DroneDto droneForm) {
+	ResponseEntity<GeneralStatus<List<DroneDto>>> getDroneByState(@PathVariable String droneState) {
 		HttpHeaders responseHeaders = new HttpHeaders();
 		responseHeaders.setContentType(MediaType.APPLICATION_JSON);
 
-		if (droneForm == null || droneForm.getState() == null) {
+		if (state == null) {
 
 			return new ResponseEntity<>(
 					new GeneralStatus<List<DroneDto>>(null, "Data  provided is empty or drone state is not provided", "400"),
 					responseHeaders, HttpStatus.OK);
 
 		}
-state =stateService.findStateByCodeNamedQuery(droneForm.getState());
+state =stateService.findStateByCodeNamedQuery(droneState);
 
 if (state == null) {
 
@@ -373,13 +371,13 @@ if (state == null) {
 	/* check drone battery level for a given drone; */
 
 	@CrossOrigin
-	@RequestMapping(value = "/drone/capacity/get", method = RequestMethod.POST, produces = "application/json")
+	@RequestMapping(value = "/drone/capacity/get/{serialNumber}", method = RequestMethod.GET, produces = "application/json")
 	@ResponseBody
-	ResponseEntity<GeneralStatus<BigDecimal>> getDroneBatteryCapacityBySerialNumber(@RequestBody DroneDto droneForm) {
+	ResponseEntity<GeneralStatus<BigDecimal>> getDroneBatteryCapacityBySerialNumber(@PathVariable String serialNumber) {
 		HttpHeaders responseHeaders = new HttpHeaders();
 		responseHeaders.setContentType(MediaType.APPLICATION_JSON);
 
-		if (droneForm == null || droneForm.getSerialNumber() == null) {
+		if (serialNumber == null) {
 
 			return new ResponseEntity<>(
 					new GeneralStatus<BigDecimal>(null, "Data  provided is empty or drone serial number is not provided", "400"),
@@ -387,7 +385,7 @@ if (state == null) {
 
 		}
 
-		  drone = droneService.findDroneBySerialNumber(droneForm.getSerialNumber());
+		  drone = droneService.findDroneBySerialNumber(serialNumber);
 		  
 		 
   if (drone == null ) {
