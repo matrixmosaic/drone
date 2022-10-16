@@ -73,12 +73,17 @@ v. All the unit testing are also within the folder ` source/test/java`  in the b
 
 
 <h1> 2.MODEL </h1>
+
+
 There are three schema for the drone database tables.
+
 
 
 <h2>A. DN_MAIN </h2>
 
 - Here is where we have placed all the main domain models (prefixed with dm i.e dm_{tableName} }
+- In summary The LOAD( dm_load ) could have several items ( dm_item ). A drone could be scheduled on a TRIP( dm_trip ) to deliver a LOAD from a defined OFFICE( df_office ) location to a DESTINATION( df_destination ) and back. 
+  
 -The entity relationship design for the models uder this schema is as displayed below.
 
 ![dn_main schema](https://musala-drones.s3.amazonaws.com/models/dn_main_schema.png)  
