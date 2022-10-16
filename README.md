@@ -28,7 +28,7 @@ iii.  The entire database schema for the drone app is place in ` src/resurce/dro
 
 iv. All the potential API are protected / authenticated via JWT with Spring Security.
 - You must get a secured and timed API token to access each service.
-- A default user with a role is added into the system. The credentials for the admin user are as follows.
+- A default user with an admin role is added into the system. The credentials for the admin user are as follows.
 ` username: musala `
 ` password: musala@2022 `
 
