@@ -1,3 +1,81 @@
+<pre>
+
+<h1> 1.Getting Started. </h1>
+
+<h2>A. The drone app is built using Java Spring boot application. To get the source code for the drone up write the commanad beelow </h2>
+
+ git clone https://github.com/matrixmosaic/drone.git
+ 
+<p>
+
+i.  You can run the source in development mode using any editor of your choice. 
+ii.  H2 is an inmerory database in this case. The schema are auto populated in the database during initialization stage.
+- The schema definition (with all the tables) file is placed in scr/main/resource/db/schema.sql . 
+- Some initial configuration data such as admin credentials and model definitions are also auto populate into the database during the initial bootup stage. The initial data file is place   in scr/main/resource/db/data.sql.
+iii.  The entire database schema for the drone app is place in src/resurce/drone_db.sql. This one is only for review purposes. With the data provided in 1 .a.ii above the application is completely ready to go.
+- With the files above, we have a complete package to work with our drone application as with any other spring boot application.
+
+</p>
+
+
+<h2>B. To build the solution(producing a jar file), Navigate to the source base directory and type the command </h2>
+<p>
+
+mvn clean install.
+
+ A jar file should be generated( containes embedded h2 database with it).
+
+ </p>
+
+
+
+
+
+
+
+<h1> 2.MODEL </h1>
+There are three shemas for the drone database tables.
+
+
+<h2>A. DN_MAIN </h2>
+
+- Here is where we have placed all the main domain models (prefixed with dm i.e dm_{tableName} }
+-The entity relationship design for the models uder this schema is as displayed below.
+
+![dn_main schema](https://musala-drones.s3.amazonaws.com/models/dn_main_schema.png)  
+
+<h2>B. DN_AUD</h2>
+<p>- Here is where we have placed all the audit tables that corresponds to each domain models which requires audit, their names corresponds to the domain models in the DN_MAIN schema but differ only in postfix ( postfixed with aud i.e aud_{tableName} }
+-The entity relationship design for the models uder this schema is as displayed below.
+
+![dn_aud schema](https://musala-drones.s3.amazonaws.com/models/dn_aud_schema.png) 
+
+</p>
+
+
+
+<h2>C. DN_DICT </h2>
+<p>
+- Here is where we have placed all definition tables (prefixed with df i.e df_{tableName} } , the common attributes in these tables are name, code and description 
+
+
+</p>
+
+
+Generally the entity relationship diagram below shows the design of the entire database.
+
+
+![general schema](https://musala-drones.s3.amazonaws.com/models/drone_db_general.png) 
+
+
+
+  
+</pre>
+
+
+
+
+<h1> 3. The Drone App API End point services </h1>
 
 Drone app service End-points
 
