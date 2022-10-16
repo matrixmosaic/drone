@@ -364,11 +364,11 @@ With default settings , the request and response schema can be viewed at
 ```json
 
  {
-        "handler": "com.musala.drones.controller.auth.LandsRemoteCallAuthController#authenticateRemotePrincipal(RemoteUserReq)",
+        "handler": "com.musala.drones.controller.auth.DroneAppRemoteCallAuthController#authenticateRemotePrincipal(RemoteUserReq)",
         "predicate": "{POST [/api/auth/authenticate], produces [application/json]}",
         "details": {
             "handlerMethod": {
-                "className": "com.musala.drones.controller.auth.LandsRemoteCallAuthController",
+                "className": "com.musala.drones.controller.auth.DroneAppRemoteCallAuthController",
                 "name": "authenticateRemotePrincipal",
                 "descriptor": "(Lcom/musala/drones/dto/remote/RemoteUserReq;)Lorg/springframework/http/ResponseEntity;"
             },
