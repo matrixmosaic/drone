@@ -24,7 +24,7 @@ iii.  The entire database schema for the drone app is place in ` src/resurce/dro
 - With the files above, we have a complete package to work with our drone application as with any other spring boot application.
 
 iv. All the potential API are protected / authenticated via JWT with Spring Security.
-- You must timed API token to access each service.
+- You must get a secured and timed API token to access each service.
 - A default user with a role is added into the system. The credentials for the admin user are as follows.
 ` username: musala `
 ` password: musala@2022 `
@@ -48,7 +48,7 @@ see the image below, a post request to get the auth token
 -Swagger end point is configured to be at;
 `http://localhost:9090/drones/docs/swagger-ui/swagger-ui/index.html`
 
-Snapshop of swagger interface(Each end point could be expanded to view the both the schema and sample values for both request and response data)
+Snapshop of swagger interface(Each end point could be expanded to view both the schema and sample values for both request and response data)
 
 ![swagger](https://musala-drones.s3.amazonaws.com/models/drone-app-swagger.PNG) 
 
@@ -57,10 +57,10 @@ v. All the unit testing are also within the folder ` source/test/java`  in the b
 </p>
 
 
-<h2>B. To build the solution(producing a jar file), Navigate to the source base directory and type the command </h2>
+<h2>B. To build the solution( generating a jar file ), Navigate to the source base directory and type the command </h2>
 <p>
 
-mvn clean install.
+ ` mvn clean install `.
 
  A jar file should be generated( containes embedded h2 database with it).
 
@@ -73,7 +73,7 @@ mvn clean install.
 
 
 <h1> 2.MODEL </h1>
-There are three shemas for the drone database tables.
+There are three schema for the drone database tables.
 
 
 <h2>A. DN_MAIN </h2>
@@ -102,7 +102,7 @@ There are three shemas for the drone database tables.
 </p>
 
 
-Generally the entity relationship diagram below shows the design of the entire database.
+Generally the entity relationship diagram below shows the design of the entire database (click to open in new tab and expand for clarity).
 
 
 ![general schema](https://musala-drones.s3.amazonaws.com/models/drone_db_general.png) 
@@ -119,19 +119,20 @@ Generally the entity relationship diagram below shows the design of the entire d
 
 Drone app has several service End-points implemented per the documented requirements.
 
-- To be authenticated and authorized to access the protected end points send each request having the header with and attribute Authorization whose value is generated from the valid user above. See the sample below on how to incooperate auth token on each request.
+- To be authenticated and authorized in order to access the protected end points,  each request should contains a header having an attribute Authorization whose value is the auth token generated from the valid user above. See the sample below on how to incooperate auth token on each request.
 
 - To test all the implemented end point and understand their request and response structure and datatypes you could use swagger whose end points are permitted for testing purposes. Swagger will give all the registered end points and populate the fieds with dummy data for testing purposes.
 -Swagger end point is configured to be at;
 `http://localhost:9090/drones/docs/swagger-ui/swagger-ui/index.html`
 
-- To incooperate the authorization token with header in swagger put toen in the Authentication parameter as described here  `https://swagger.io/docs/specification/describing-parameters/#header-parameters`
+- To incooperate the authorization token with header in swagger put toen in the Authentication parameter as described at 
+ [https://swagger.io/docs/specification/describing-parameters/#header-parameters](https://swagger.io/docs/specification/describing-parameters/#header-parameters)
 
 Drone app has the following end points.
 
 1. /api/ops/drone/register
 
-This method exposes the service end point for registering a new drone
+This method exposes the service end point for registering a new drone;
 With default settings , the request and response schema can be viewed at 
 [http://localhost:9090/drones/docs/swagger-ui/swagger-ui/index.html#/dispatch-controller/getDroneWithLoadItems ]( http://localhost:9090/drones/docs/swagger-ui/swagger-ui/index.html#/dispatch-controller/registerDrone )
 
@@ -219,7 +220,7 @@ With default settings , the request and response schema can be viewed at
 3. /api/ops/drone/items/get/{serialNumber}
 
 
-This method exposes the service end point for checking loaded medication items for a given drone. It takes the drone serial Number as path parameter
+This method exposes the service end point for checking loaded medication items for a given drone. It takes the drone serial Number as path parameter;
 With default settings , the request and response schema can be viewed at  
 [http://localhost:9090/drones/docs/swagger-ui/swagger-ui/index.html#/dispatch-controller/getDroneWithLoadItems ]( http://localhost:9090/drones/docs/swagger-ui/swagger-ui/index.html#/dispatch-controller/getDroneWithLoadItems )
 
@@ -263,7 +264,7 @@ With default settings , the request and response schema can be viewed at
 4. /api/ops/drone/state/get/{droneState}
 
 
-This method exposes the service end point for checking available drones for loading;. It takes the drone drone State (IDLE) as path parameter
+This method exposes the service end point for checking available drones for loading;. It takes the drone drone State (IDLE) as path parameter;
 With default settings , the request and response schema can be viewed at  
 [http://localhost:9090/drones/docs/swagger-ui/swagger-ui/index.html#/dispatch-controller/getDroneWithLoadItems ]( http://localhost:9090/drones/docs/swagger-ui/swagger-ui/index.html#/dispatch-controller/getDroneWithLoadItems )
 
@@ -306,7 +307,7 @@ With default settings , the request and response schema can be viewed at
 5. /api/ops/drone/capacity/get/{serialNumber}
 
 
-This method exposes the service end point for checking drone battery level for a given drone. It takes the drone drone serialNumber as path parameter
+This method exposes the service end point for checking drone battery level for a given drone. It takes the drone drone serialNumber as path parameter;
 With default settings , the request and response schema can be viewed at 
 [http://localhost:9090/drones/docs/swagger-ui/swagger-ui/index.html#/dispatch-controller/getDroneWithLoadItems ]( http://localhost:9090/drones/docs/swagger-ui/swagger-ui/index.html#/dispatch-controller/getDroneByState ) 
 
@@ -346,7 +347,7 @@ With default settings , the request and response schema can be viewed at
 ```
 
 6. /api/auth/authenticate
-This method takes in the principal credentials, validates them and issues timed tokens for authorized users.
+This method takes in the principal credentials, validates them and issues timed tokens for authorized users;
 
 With default settings , the request and response schema can be viewed at 
 [http://localhost:9090/drones/docs/swagger-ui/swagger-ui/index.html#/lands-remote-call-auth-controller/authenticateRemotePrincipal]( http://localhost:9090/drones/docs/swagger-ui/swagger-ui/index.html#/lands-remote-call-auth-controller/authenticateRemotePrincipal ) 
