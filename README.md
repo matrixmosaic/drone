@@ -1,4 +1,4 @@
-<pre>
+
 
 <h1> 1.Getting Started. </h1>
 
@@ -61,7 +61,7 @@ There are three shemas for the drone database tables.
 
 </p>
 
-</pre>
+
 Generally the entity relationship diagram below shows the design of the entire database.
 
 
