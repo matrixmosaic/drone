@@ -3,8 +3,6 @@
  */
 package com.musala.drones.dto.operation;
 
-import java.util.List;
-
 import com.musala.drones.model.Item;
 
 public class ItemDto {

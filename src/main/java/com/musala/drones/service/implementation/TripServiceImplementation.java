@@ -1,8 +1,5 @@
 package com.musala.drones.service.implementation;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -13,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.support.DataAccessUtils;
 import org.springframework.stereotype.Service;
 
-import com.musala.drones.model.Item;
 import com.musala.drones.model.Trip;
 import com.musala.drones.repository.TripDao;
 import com.musala.drones.service.TripService;
@@ -66,6 +62,9 @@ public class TripServiceImplementation implements TripService {
 	@SuppressWarnings("unchecked")
 
 	public Trip findTripWithLoadItemsBySerialNumberNamedQuery(String serialNumber) {
+		if(serialNumber == null) {
+			return null;
+		}
 		  trip= new Trip();
 		  query = entityManager.createNamedQuery(
 		 "TripWithLoadItemsBySerialNumberNamedQuery")

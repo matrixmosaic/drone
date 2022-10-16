@@ -1,16 +1,10 @@
 package com.musala.drones.service.implementation;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-import javax.transaction.Transactional;
 
-import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.support.DataAccessUtils;
 import org.springframework.stereotype.Service;
 
 import com.musala.drones.model.Load;
@@ -34,7 +28,7 @@ public class LoadServiceImplementation implements LoadService {
     private EntityManager entityManager;
     
 	Query query;
-	private Load load;
+
 	
 	@Override
 	public Load addAndGetInstance(Load load) {

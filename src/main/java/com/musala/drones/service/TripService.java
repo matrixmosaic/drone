@@ -1,11 +1,5 @@
 package com.musala.drones.service;
 
-/**
- * 
- */
-
-import java.util.List;
-
 import com.musala.drones.model.Trip;
 
 

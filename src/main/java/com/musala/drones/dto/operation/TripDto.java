@@ -2,9 +2,7 @@ package com.musala.drones.dto.operation;
 
 import java.math.BigDecimal;
 import java.util.Date;
-import java.util.List;
 
-import com.musala.drones.model.Load;
 import com.musala.drones.model.Trip;
 
 /**

@@ -15,7 +15,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -102,7 +101,7 @@ public class DispatchController {
 		if (droneForm == null || droneForm.getModel() == null) {
 
 			return new ResponseEntity<>(new GenericOperationResponse( "400", "Drone informtion cannot be null"),
-					responseHeaders, HttpStatus.BAD_REQUEST);
+					responseHeaders, HttpStatus.OK);
 	
 		}
 		
@@ -142,7 +141,7 @@ public class DispatchController {
 		if (droneForm == null || droneForm.getModel() == null || droneForm.getSerialNumber() == null) {
 
 			return new ResponseEntity<>(new GenericOperationResponse( "400", "Drone informtion cannot be null"),
-					responseHeaders, HttpStatus.BAD_REQUEST);
+					responseHeaders, HttpStatus.OK);
 	
 		}
 		
@@ -160,7 +159,7 @@ public class DispatchController {
 		  }
 		   if( (droneForm.getWeight()).compareTo(BigDecimal.valueOf(500)) > 0) {
 				return new ResponseEntity<>(new GenericOperationResponse( "400", "Drone weight should not exceed 500gm!"),
-						responseHeaders, HttpStatus.BAD_REQUEST);
+						responseHeaders, HttpStatus.OK);
 			 
 		  }
 		   
@@ -172,7 +171,7 @@ public class DispatchController {
 	  if (drone == null ) {
 
 			return new ResponseEntity<>(new GenericOperationResponse( "400", "No drone found in the records"),
-					responseHeaders, HttpStatus.BAD_REQUEST);
+					responseHeaders, HttpStatus.OK);
 	
 		}
 		  drone =   Drone.setDrone(drone, droneForm, model, state);
@@ -203,14 +202,14 @@ public class DispatchController {
 		if (tripForm == null || tripForm.getDroneSerialNumber() == null || tripForm.getLoad() == null) {
 
 			return new ResponseEntity<>(new GenericOperationResponse( "400", "Drone informtion cannot be null"),
-					responseHeaders, HttpStatus.BAD_REQUEST);
+					responseHeaders, HttpStatus.OK);
 	
 		}
 		
 		  if (tripForm.getLoad().getCode() == null ) {
 
 				return new ResponseEntity<>(new GenericOperationResponse( "400", "Please specify the value foe the load type"),
-						responseHeaders, HttpStatus.BAD_REQUEST);
+						responseHeaders, HttpStatus.OK);
 		
 			}
 		
@@ -221,34 +220,34 @@ public class DispatchController {
 		  if (drone == null ) {
 
 				return new ResponseEntity<>(new GenericOperationResponse( "400", "Drone informtion cannot be null"),
-						responseHeaders, HttpStatus.BAD_REQUEST);
+						responseHeaders, HttpStatus.OK);
 		
 			}
 		  
 		  
 		  if(tripForm.getLoad() == null) {
 				return new ResponseEntity<>(new GenericOperationResponse( "400", "Load informtion cannot be null!"),
-						responseHeaders, HttpStatus.BAD_REQUEST);
+						responseHeaders, HttpStatus.OK);
 			 
 		  }
 		  
 		  
 		 if(!(tripForm.getLoad().getName().matches("[A-Za-z0-9\\-\\_]+"))){
 			 return new ResponseEntity<>(new GenericOperationResponse( "400", " The load name must contain only letters, numbers, ‘-‘, ‘_’ "),
-						responseHeaders, HttpStatus.BAD_REQUEST);  
+						responseHeaders, HttpStatus.OK);  
 		  }
 		 
 		 
 		  
 			 if(!(tripForm.getLoad().getCode().matches("[A-Z0-9\\-\\_]+"))){
 				 return new ResponseEntity<>(new GenericOperationResponse( "400", " The load code must contain only letters, numbers, ‘-‘, ‘_’ "),
-							responseHeaders, HttpStatus.BAD_REQUEST);  
+							responseHeaders, HttpStatus.OK);  
 			  }
 		  
 			 
 			 if( (tripForm.getLoad().getWeight()).compareTo(BigDecimal.valueOf(500)) > 0) {
 					return new ResponseEntity<>(new GenericOperationResponse( "400", "The load should not exceed 500gm!"),
-							responseHeaders, HttpStatus.BAD_REQUEST);
+							responseHeaders, HttpStatus.OK);
 				 
 			  }
 		  
@@ -256,7 +255,7 @@ public class DispatchController {
 	          
 	          if(loadType == null) {
 					return new ResponseEntity<>(new GenericOperationResponse( "400", "Load type information could not be found!"),
-							responseHeaders, HttpStatus.BAD_REQUEST);
+							responseHeaders, HttpStatus.OK);
 				 
 			  }
 	          
@@ -310,7 +309,7 @@ public class DispatchController {
 		
 		if (trip == null) {
 			return new ResponseEntity<>(
-					new GeneralStatus<TripDto>(null, "No drone found with the provided serial number!", "200"),
+					new GeneralStatus<TripDto>(null, "No drone found with the provided serial number!", "400"),
 					responseHeaders, HttpStatus.OK);
 		}
 		return new ResponseEntity<>(new GeneralStatus<TripDto>(new TripDto(trip) , "Document Updated succefully!", "200"),
