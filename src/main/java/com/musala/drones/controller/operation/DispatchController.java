@@ -174,6 +174,9 @@ public class DispatchController {
 					responseHeaders, HttpStatus.OK);
 	
 		}
+	  
+	  
+	 
 		  drone =   Drone.setDrone(drone, droneForm, model, state);
 		  droneService.addAndGetInstance(drone);
 		  
@@ -224,6 +227,13 @@ public class DispatchController {
 		
 			}
 		  
+		  
+		  
+		  if( (drone.getBatteryCapacity()).compareTo(BigDecimal.valueOf(25)) < 0) {
+				return new ResponseEntity<>(new GenericOperationResponse( "400", "Cannot Load, drone battery is depleted!"),
+						responseHeaders, HttpStatus.OK);
+			 
+		  }
 		  
 		  if(tripForm.getLoad() == null) {
 				return new ResponseEntity<>(new GenericOperationResponse( "400", "Load informtion cannot be null!"),
