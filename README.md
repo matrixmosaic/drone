@@ -254,11 +254,7 @@ With default settings , the request and response schema can be viewed at
                 "patterns": [
                     "/api/ops/drone/items/get/{serialNumber}"
                 ],
-                "consumes": [
-                    {
-                        "mediaType": "application/json",
-                       
-                    },
+               
                 "produces": [
                     {
                         "mediaType": "application/json",
@@ -298,11 +294,7 @@ With default settings , the request and response schema can be viewed at
                 "patterns": [
                     "/api/ops/drone/state/get/{droneState}"
                 ],
-                 "consumes": [
-                    {
-                        "mediaType": "application/json",
-                       
-                    },
+                
                 "produces": [
                     {
                         "mediaType": "application/json",
@@ -341,11 +333,7 @@ With default settings , the request and response schema can be viewed at
                 "patterns": [
                     "/api/ops/drone/capacity/get/{serialNumber}"
                 ],
-                    "consumes": [
-                    {
-                        "mediaType": "application/json",
-                       
-                    },
+                  
                 "produces": [
                     {
                         "mediaType": "application/json",
