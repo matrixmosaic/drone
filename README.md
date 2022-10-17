@@ -62,7 +62,8 @@ v. All the unit testing are also within the folder ` source/test/java`  in the b
 </p>
 
 
-<h2>B. To build the solution( generating a jar file ), Navigate to the source base directory and type the command </h2>
+<h2>B. Building the solution </h2>
+To build the solution( generating a jar file ), Navigate to the source base directory and type the command
 <p>
 
  ` mvn clean install `.
