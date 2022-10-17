@@ -42,7 +42,7 @@ import com.musala.drones.service.StateService;
 import com.musala.drones.service.TripService; 
 
 /**
- * @author George J. Budeba george.bugeba@lands.go.tz
+ * @author George J. Budeba 
  *
  */
 
