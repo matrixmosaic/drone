@@ -13,7 +13,7 @@
 	<artifactId>drones</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>drones</name>
-	<description>Spring Boot REST API that allows clients to communicate with the drone services(i.e.  dispatch controller).</description>
+	<description>Spring Boot Application - REST API that allows clients to communicate with the drone services(i.e.  dispatch controller).</description>
 	<properties>
 		<java.version>17</java.version>
 		<geotools.version>25-SNAPSHOT</geotools.version>
@@ -137,14 +137,14 @@
 			<artifactId>spring-restdocs-mockmvc</artifactId>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<!-- https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-ui -->
-<dependency>
-    <groupId>org.springdoc</groupId>
-    <artifactId>springdoc-openapi-ui</artifactId>
-    <version>1.6.11</version>
-</dependency>
-		
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-ui</artifactId>
+			<version>1.6.11</version>
+		</dependency>
+
 	</dependencies>
 	<repositories>
 		<repository>
