@@ -2,7 +2,9 @@
 
 <h1> 1.Getting Started. </h1>
 
-<h2>A. The drone app is built using Java Spring boot application. To get the source code for the drone up write the commanad beelow </h2>
+<h2>A. The drone app is built using Java Spring boot application.</h2>
+
+ To get the source code for the drone up write the command below 
 
   `git clone https://github.com/matrixmosaic/drone.git`
   
