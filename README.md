@@ -59,6 +59,8 @@ Snapshop of swagger interface(Each end point could be expanded to view both the 
 
 v. All the unit testing are also within the folder ` source/test/java`  in the base package ` com.musala.drones `
 
+vi. Event Scheduling and logging are implemented in ` src/main/java/com/musala/drones/config/scheduller/JobScheduller.java `
+
 </p>
 
 
