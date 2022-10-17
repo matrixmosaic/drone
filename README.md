@@ -39,7 +39,7 @@ iv. All the potential API are protected / authenticated via JWT with Spring Secu
 - We will use this default url for all our examples below. ( All the values are configuratie via the application.properties file)
 
 - To get the auth token post the json with the correct user details, default admin credentials in this case. The authentication end point is at
-` http://localhost:9090/drones/api/auth/authenticate`
+[http://localhost:9090/drones/api/auth/authenticate](http://localhost:9090/drones/api/auth/authenticate)
 
 see the image below, a post request to get the auth token
 
@@ -51,7 +51,7 @@ see the image below, a post request to get the auth token
 
 - To test all the implemented end point and understand their request and response structure and datatypes you could use swagger whose end points are permitted for testing purposes. Swagger will give all the registered end points and populate the fieds with dummy data for testing purposes.
 -Swagger end point is configured to be at
-![http://localhost:9090/drones/docs/swagger-ui/swagger-ui/index.html](http://localhost:9090/drones/docs/swagger-ui/swagger-ui/index.html)
+[http://localhost:9090/drones/docs/swagger-ui/swagger-ui/index.html](http://localhost:9090/drones/docs/swagger-ui/swagger-ui/index.html)
 
 Snapshop of swagger interface(Each end point could be expanded to view both the schema and sample values for both request and response data)
 
@@ -133,7 +133,7 @@ Drone app has several service End-points implemented per the documented requirem
 
 - To test all the implemented end point and understand their request and response structure and datatypes you could use swagger whose end points are permitted for testing purposes. Swagger will give all the registered end points and populate the fieds with dummy data for testing purposes.
 -Swagger end point is configured to be at;
-`http://localhost:9090/drones/docs/swagger-ui/swagger-ui/index.html`
+[http://localhost:9090/drones/docs/swagger-ui/swagger-ui/index.html](http://localhost:9090/drones/docs/swagger-ui/swagger-ui/index.html)
 
 - To incooperate the authorization token with header in swagger put toen in the Authentication parameter as described at 
  [https://swagger.io/docs/specification/describing-parameters/#header-parameters](https://swagger.io/docs/specification/describing-parameters/#header-parameters)
