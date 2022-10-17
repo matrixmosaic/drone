@@ -70,7 +70,7 @@ To build the solution( generating a jar file ), Navigate to the source base dire
 
  ` mvn clean install `.
 
- A jar file should be generated( containes embedded h2 database with it).
+ A jar file should be generated( contains embedded h2 database with it).
 
  </p>
 
