@@ -16,8 +16,8 @@ ii.  H2 is an inmerory database in this case. The schema are auto populated in t
 
 - the default database user credentials are configured in application.properies file as below
 
-` spring.datasource.username=musala `
-` spring.datasource.password=musala2022`
+` spring.datasource.username=drone `
+` spring.datasource.password=drone*2022`
 
 - With the default configurations. Once the application is running on the local machine, the H2 In memory database could be accessed at [http://localhost:9090/drones/db](http://localhost:9090/drones/db)
 - the default database name is dronedb, hence, in this condition, the JDBC url should be jdbc:h2:mem:dronedb
